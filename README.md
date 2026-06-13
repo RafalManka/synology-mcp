@@ -116,7 +116,7 @@ To build and push to ghcr.io, see [`deploy.sh`](deploy.sh).
 
 ## Why Rust
 
-Single static binary (~5 MB). Runs from a `scratch` container — no OS, no shell, 
+Single static binary (~5 MB). Runs from a `scratch` container. No OS, no shell, 
 no runtime. Starts in under a second. The musl target means zero shared library 
 dependencies, so the Docker image is as small as it gets.
 
@@ -124,6 +124,6 @@ dependencies, so the Docker image is as small as it gets.
 
 ## Security
 
-The DSM system and storage APIs require administrator-level access. Create a dedicated DSM admin user for MCP — do **not** use the built-in `admin` account.
-
-Do **not** enable 2FA on the MCP user — DSM API auth does not support it. Treat `MCP_AUTH_TOKEN` like a password and keep it out of version control.
+The DSM system and storage APIs require administrator-level access. Create a dedicated DSM admin user for MCP. 
+Do **not** use the built-in `admin` account. Do **not** enable 2FA on the MCP user as DSM API auth does not support it. 
+Treat `MCP_AUTH_TOKEN` like a password and keep it out of version control.
