@@ -1,0 +1,16 @@
+services:
+  synology-mcp:
+    image: ghcr.io/rafalmanka/synology-mcp:latest
+    environment:
+      - SYNOLOGY_HOST=127.0.0.1
+      - SYNOLOGY_PORT=5001
+      - SYNOLOGY_USER=mcp_user
+      - SYNOLOGY_PASSWORD=${SYNOLOGY_PASSWORD}
+      - SYNOLOGY_HTTPS=true
+      - MCP_AUTH_TOKEN=${MCP_AUTH_TOKEN}
+      - MCP_PORT=3006
+      - RUST_LOG=info
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+    network_mode: host
